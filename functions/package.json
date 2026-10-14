@@ -1,0 +1,22 @@
+{
+  "name": "fault-diagnostics-function",
+  "version": "2.0.0",
+  "description": "Google Cloud Function proxy for AI Fault Diagnostics Add-In",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "gcloud functions deploy analyze --runtime nodejs20 --trigger-http --allow-unauthenticated --set-env-vars LLM_GATEWAY_TOKEN=$LLM_GATEWAY_TOKEN,LLM_GATEWAY_URL=https://your-llm-gateway.example.com/api/v2"
+  },
+  "keywords": [
+    "fault-diagnostics",
+    "ai",
+    "cloud-function"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^5.0.1"
+  }
+}
